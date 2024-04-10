@@ -21,6 +21,23 @@ namespace ExamenII
             Apellidos = apellidos;
             SueldoBruto = sueldoBruto;
             Categoria = categoria;
+            CalcularAumentoYSueldoNeto();
+        }
+        private void CalcularAumentoYSueldoNeto()
+        {
+            double porcentajeAumento = 0;
+
+            if (SueldoBruto <= 1000)
+                porcentajeAumento = 0.1;
+            else if (SueldoBruto <= 2000)
+                porcentajeAumento = 0.2;
+            else if (SueldoBruto <= 4000)
+                porcentajeAumento = 0.3;
+            else
+                porcentajeAumento = 0.4;
+
+            MontoAumento = porcentajeAumento * SueldoBruto;
+            SueldoNeto = SueldoBruto + MontoAumento;
         }
     }
 }
