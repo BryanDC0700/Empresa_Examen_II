@@ -1,43 +1,36 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data.SqlClient;
 namespace ExamenII
 {
-    internal class Empleado
-    {
-        public string Nombre { get; set; }
-        public string Apellidos { get; set; }
-        public double SueldoBruto { get; set; }
-        public char Categoria { get; set; }
-        public double MontoAumento { get; set; }
-        public double SueldoNeto { get; set; }
-
-        public Empleado(string nombre, string apellidos, double sueldoBruto, char categoria)
+        public class Empleado
         {
-            Nombre = nombre;
-            Apellidos = apellidos;
-            SueldoBruto = sueldoBruto;
-            Categoria = categoria;
-            CalcularAumentoYSueldoNeto();
+            public string Nombre { get; set; }
+            public string Apellidos { get; set; }
+            public double SueldoBruto { get; set; }
+            public char Categoria { get; set; }
+            public double MontoAumento { get; set; }
+            public double SueldoNeto { get; set; }
         }
-        private void CalcularAumentoYSueldoNeto()
+
+    using System.Collections.Generic;
+
+    public class EmpleadoDAO
         {
-            double porcentajeAumento = 0;
+            private List<Empleado> empleados = new List<Empleado>();
 
-            if (SueldoBruto <= 1000)
-                porcentajeAumento = 0.1;
-            else if (SueldoBruto <= 2000)
-                porcentajeAumento = 0.2;
-            else if (SueldoBruto <= 4000)
-                porcentajeAumento = 0.3;
-            else
-                porcentajeAumento = 0.4;
+            public void AgregarEmpleado(Empleado empleado)
+            {
+                empleados.Add(empleado);
+            }
 
-            MontoAumento = porcentajeAumento * SueldoBruto;
-            SueldoNeto = SueldoBruto + MontoAumento;
+            public List<Empleado> ObtenerEmpleados()
+            {
+                return empleados;
+            }
         }
-    }
+
 }
