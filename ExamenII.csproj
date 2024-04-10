@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculadoraSueldo.cs" />
     <Compile Include="empleado.cs" />
     <Compile Include="EmpleadoDAO.cs" />
     <Compile Include="Empresa.Context.cs">
