@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="empleado.cs" />
+    <Compile Include="EmpleadoDAO.cs" />
     <Compile Include="Empresa.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
